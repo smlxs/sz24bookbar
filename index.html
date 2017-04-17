@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+	<title>深圳24小时书吧</title>
+	
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	
+	<!-- Custom Google Web Font -->
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+	<!-- <link ref="stylesheet" href='http://fonts.useso.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'> -->
+	
+	<!-- Add custom CSS here -->
+	<link rel="stylesheet" href="css/custom.css">
+	
+	<!-- javascript -->
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/custom.js"></script>
+	
+</head>
+<body>
+    
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	
+	    <!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			    <span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">深圳"24小时书吧"</a>
+		</div>
+		
+		<!-- Collect the new links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    <ul class="nav navbar-nav navbar-right">
+			    <li><a href="#" class="scroll-link" data-id="home">首页</a></li>
+				<li><a href="#" class="scroll-link" data-id="about">关于我们</a></li>
+				<li><a href="#" class="scroll-link" data-id="services">服务</a></li>
+				<li><a href="#" class="scroll-link" data-id="contact">留言</a></li>
+				<li><a style="cursor:pointer;" id="loginpopup">登录 / 注册</a></li>
+				<li class="dropdown">
+				    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome <strong>Guest</strong> <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+					    <li><a href="#">个人中心</a></li>
+						<li><a href="#">我的借阅</a></li>
+						<li class="divider"></li>
+						<li><a href="#">退出</a></li>
+					</ul>
+				</li>
+			</ul>
+			<!--
+			    <form class="navbar-form navbar-right" role="search">
+				    <div class="form-group">
+					    <input type="text" class="form-control" placeholder="Search" />
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			-->
+		</div><!-- /.navbar-collapse -->
+		<div class="copyrights">Collect from <a href="#">生命练习生</a></div>
+	
+	</nav>
+	<!-- Code for Login / signup Popup -->
+	<!-- Modal Log in -->
+	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+	    <div class="modal-dialog" style="margin-top:150px;">
+		    <div class="modal-content">
+			    <div class="modal-header">
+				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">登录页</h4>
+				</div>
+				<div class="modal-body" id="login_details">
+				    <span> 已有账户?</span><br /><br />
+					*<span style="font-weight:bold;">你的邮箱</span><br />
+					<input type="text" placeholder="example@gmail.com" name="login_email" /><br /><br />
+					*<span style="font-weight:bold;">密码</span><br />
+					<input type="password" placeholder="Password" name="login_password" /><br />
+				</div>
+				<div class="modal-footer">
+				    <input style="float:left;" type="button" class="btn btn-success" value="登录" />
+					<span class="fp-link"><a href="#">忘记密码?</a></span><br /><br />
+					<span>还不是书吧一员?</span>
+					<span id="signup-link" style="cursor:pointer;" class="text-info">注册!</span>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<!-- Modal Login Ends -->
+	<!-- Modal Sign-up Starts -->
+	<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+	    <div class="modal-dialog" style="margin-top:100px;">
+		    <div class="modal-content">
+			    <div class="modal-header">
+				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel2">注册页</h4>
+				</div>
+				<div class="modal-body" id="signup_details">
+				    <span>昵称</span>
+					<input type="text" placeholder="Full Name" name="register_name" /><br /><br />
+					*<span>邮箱</span>
+					<input type="text" placeholder="example@gmail.com" name="register_email" /><br /><br />
+					*<span>密码</span>
+					<input type="password" placeholder="Password" name="register_password" /><br /></br />
+					*<span>确认密码</span><br />
+					<input type="passsword" placeholder="Re-Type Password" name="re_register_password" />
+				</div>
+				<div class="modal-footer">
+				    <input style="float:left;" type="button" class="btn btn-success" value="我要注册" />
+					<span>&nbsp;&nbsp;&nbsp; 已是书吧一员?</span>
+					<span id="login-link" class="text-info" style="cursor:pointer;"> 登录</span>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<!-- Modal Sign up ends -->
+	<!-- End code for Login / Signup Popup -->
+	
+	<div class="intro-header" id="home">
+	    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		    <!-- Indicators -->
+			<ol class="carousel-indicators">
+			    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			</ol>
+			
+			<!-- Wraper for slides -->
+			<div class="carousel-inner">
+			    <div class="item active">
+				    <img src="img/img1.jpg" alt="First Image" />
+					<div class="carousel-caption">First Image</div>
+				</div>
+				<div class="item">
+				    <img src="img/img2.jpg" alt="Second Image" />
+					<div class="carousel-caption">Second Image</div>
+				</div>
+				<div class="item">
+				    <img src="img/img3.jpg" alt="Third Image" />
+					<div class="carousel-caption">Third Image</div>
+				</div>
+			</div>
+			
+			<!-- Controls -->
+			<a class="carousel-control left" href="#carousel-example-generic" data-slide="prev">
+			    <span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="carousel-control right" href="#carousel-example-generic" data-slide="next">
+			    <span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div><!-- /.carousel -->
+	</div><!-- /.intro-header -->
+	
+	<div class="content-section-a" id="about">
+	    
+		<div class="container">
+		    <div class="row">
+			    <div class="col-lg-5 col-sm-6">
+				    <div class="clearfix"></div>
+					<h2 class="section-heading">深圳"24小时书吧"</h2>
+					<p class="lead">深圳有个中心书城，中心书城有个<a href="#">24小时书吧</a>。从前身到转型，从2006年11月至今，7万个小时不打烊不熄灯，这里是深圳人永远的灵魂灯塔。</p>
+					<p class="lead">“你可以在一个阳光明媚的下午，带上自己喜欢的书来到书吧，点一杯<a href="#">gaga咖啡</a>，让书香和咖啡香在阳光下完美地融合。有来聊天的，有来看书的，有来复习的，有来充电的。在这里工作，永远不会无聊。也许是一个星光璀璨的晚上，你约上三五知己，来到书吧小酌畅谈，又或者是几个志同道合的朋友，在这里产生思想的碰撞……”这是当年的一个午后，原深圳出版发行集团副总经理、深圳书城中心城总经理王芳坐在<a href="#">“24小时书吧”</a>的一角，畅谈书吧未来。</p>
+				</div>
+				<div class="col-lg-5 col-lg-offset-2 col-sm-6">
+				    <img class="img-responsive" src="img/bookbar.jpg" alt="" />
+				</div>
+			</div>
+		</div><!-- /.container -->
+		
+	</div><!-- /.content-section-a -->
+	
+	<div class="content-section-b" id="services">
+	    
+		<div class="container">
+		    <div class="row">
+			    <div class="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
+				    <h2 class="section-heading">服务</h2>
+					<p class="lead">作为深圳唯一一家通宵营业的书吧，“24小时书吧”是一个亲切、包容、开放的场所，它既是舒适的，又是优雅的，独立的，同时也是开放的。“24小时书吧”在白天是一个<a href="#">优品书店</a>，而在夜晚则是由一本本书围合而成的私密领地。而在合适的时候，这里也可以开展主题阅读聚会，又或是创意展览，它可以是一个人的，也可以是一群知己的。无论是在刚苏醒的清晨、热闹的午后，还是静谧的深夜，24小时书店总在为人们守候，照亮这座<a href="#">阅读不夜城</a>。陪伴阅读者的，还有挑灯夜读的守夜人。“在白天，深圳是个热闹的都市，到了深夜，这座城市恢复难得的宁静，当所有读者专注看书时，就是这座城市最美的一刻。”</p>
+				</div>
+				<div class="col-lg-5 col-sm-pull-6 col-sm-6">
+				    <img class="img-responsive" src="img/gaga.jpg" alt="" />
+				</div>
+			</div>
+		</div><!-- /.container -->
+		
+	</div><!-- /.content-section-b -->
+	
+	<div class="content-section-a" id="contact">
+	    
+		<div class="container">
+		    <div class="row">
+			    <div class="col-lg-5 col-sm-6">
+				    <h2 class="section-heading">留言</h2>
+					<form name="sentMessage" class="well" id="contactForm" novalidate>
+					
+					    <div class="control-group">
+						    <div class="controls">
+							    <input type="text" class="form-control" placeholder="标签" id="name" required data-validation-required-message="Please enter your name" />
+								<p class="help-block"></p>
+							</div>
+						</div>
+						<div class="control-group">
+						    <div class="controls">
+							    <input type="email" class="form-control" placeholder="分店" id="email" required data-validation-required-message="Please enter your email" />
+								<p class="help-block"></p>
+							</div>
+						</div>
+						<div class="control-group">
+						    <div class="controls">
+							    <textarea rows="10" cols="100" class="form-control" placeholder="我要留言" id="message" required data-validation-required-message="Please enter your message" minlength="5" data-validation-minlength-message="Min 5 characters" maxlength="999" style="resize:none"></textarea>
+								<p class="help-block"></p>
+							</div>
+						</div>
+						<div id="success"></div><!-- For success / fail message -->
+						<button type="submit" class="btn btn-primary pull-right">留言</button><br /><br />
+					</form>
+				</div>
+				<div class="col-lg-5 col-lg-offset-2 col-sm-6">
+				    <!-- <img class="img-responsive" src="img/map.gif" alt=""> -->
+				</div>
+			</div>
+		</div><!-- /.container -->
+		
+	</div><!-- /.content-section-a -->
+	
+	<footer>
+	    <div class="container">
+		    <div class="row">
+			    <div class="col-lg-12">
+				    <ul class="list-inline">
+					    <li><a href="#home">首页</a></li>
+						<li class="footer-menu-divider">&sdot;</li>
+						<li><a href="#about">关于我们</a></li>
+						<li class="footer-menu-divider">&sdot;</li>
+						<li><a href="#services">服务</a></li>
+						<li class="footer-menu-divider">&sdot;</li>
+						<li><a href="#contact">留言</a></li>
+					</ul>
+					<p class="copyright text-muted small">Copyright &copy; 深圳"24小时书吧" 2017. All Rights Reserved. - Collect from <a href="#" target="_blank">Q</a></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+
+</body>
+</html>
